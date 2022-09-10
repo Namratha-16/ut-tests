@@ -1,11 +1,118 @@
 pipeline {
-  agent any
-  stages {
-    stage('git') {
-      steps {
-        sh 'echo "hello-world"'
-      }
+     agent {
+       docker { image 'namrathanag21/fun:latest' }
+     }
+     stages {
+       stage('clone') {
+         steps {
+             //cleanWs()
+             sh'python3 --version'
+             sh 'rm -rf tata-project'
+         sh 'git clone --branch Develop https://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@github.com/Trail-Tech/tata-project.git'
+        }
+       }
+       stage('build') {
+         steps {
+             echo "build is doing in cmake.sh"
+            sh 'ls -ltr'
+            //sh 'zip -r TestResults.zip Robot-Results'
+            sh 'chmod 777 /var/lib/jenkins/workspace/$JOB_NAME/tata-project/Cmake.sh'
+            //sh ' cd /var/lib/jenkins/workspace/$JOB_NAME/tata-project/ | /var/lib/jenkins/workspace/$JOB_NAME/tata-project/Cmake.sh '
+            sh 'cp /var/lib/jenkins/workspace/$JOB_NAME/tata-project/ATD7B9.MA2209080951jenk.swu /var/lib/jenkins/workspace/$JOB_NAME/tata-project/ATD7B9.MA2209080951jenk.swu_$BUILD_NUMBER.swu'
+        }
+       }
+      stage ('Invoke_pipeline') {
+            steps {
+                build job: 'merge-Job', parameters: [
+                string(name: 'Source_Branch', value: "Feature-Dev")
+                ]
+            }
+        }
+       stage('Robot-results-check') {
+         steps {
+             echo "build is doing in cmake.sh"
+            sh 'ls -ltr'
+            sh 'chmod 777 /var/lib/jenkins/workspace/$JOB_NAME/tata-project/Readxml.py'
+            //sh ' python3 /var/lib/jenkins/workspace/$JOB_NAME/tata-project/Readxml.py '
+            script {
+            def Result = sh(script: 'python3 /var/lib/jenkins/workspace/$JOB_NAME/tata-project/Readxml.py', returnStdout: true)
+            
+                
+                if ( Result.toInteger() >= 81){
+                    
+                    echo"build pass"
+                }
+                else{
+                    
+                    echo "$Result"
+                    sh "exit 1"
+                }
+            }
+                
+            
+        }
+       }
+      
+       
+ stage ('Server'){
+  steps {
+   rtServer (
+   id: "jfrog",
+                 url: 'http://35.90.188.239:8082//artifactory',
+                 username: 'admin',
+                  password: 'Polaris@123',
+                  bypassProxy: true,
+                   timeout: 300
+                        )
+         
+           }
     }
+    stage('Publish Robot results to Jenkins Dashboard') {
+        steps {
+         		        script {
+		          step(
+			            [
+			              $class              : 'RobotPublisher',
+			              outputPath          : '/var/lib/jenkins/workspace/$JOB_NAME/tata-project/Robot-Results',
+			              outputFileName      : '**/output.xml',
+			              reportFileName      : '**/report.html',
+			              logFileName         : '**/log.html',
+			              disableArchiveOutput: false,
+			              passThreshold       : 50,
+			              unstableThreshold   : 40,
+			              otherFiles          : "**/*.png,**/*.jpg",
+			            ]
+		          	)
+		        }
+     }
+    }
+            
+ stage('upload artifactory') {
+  steps {
+    rtUpload (
+        serverId:"jfrog" ,
+        spec: '''{
+             "files": [
+                     {
+                      "pattern": "/var/lib/jenkins/workspace/$JOB_NAME/tata-project/*_$BUILD_NUMBER.swu",
+                      "target" : "kodiak/"
+                     }
+                 ]
+            }''',
 
-  }
+
+
+      )
+   }
+      
+      }
+      
 }
+ post{
+        always{
+            emailext to: "upparasunil.k@tataelxsi.co.in",
+            subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+            body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
+        }
+    }
+        }
