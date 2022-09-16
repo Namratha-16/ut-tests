@@ -40,8 +40,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 RUN sed -i /etc/ssh/sshd_config \
         -e 's/#PermitRootLogin.*/PermitRootLogin no/' \
-        -e 's/#RSAAuthentication.*/RSAAuthentication yes
-		-e 's/#PasswordAuthentication.*/PasswordAuthentication no/' \
+        -e 's/#RSAAuthentication.*/RSAAuthentication yes \
+	-e 's/#PasswordAuthentication.*/PasswordAuthentication no/' \
         -e 's/#SyslogFacility.*/SyslogFacility AUTH/' \
         -e 's/#LogLevel.*/LogLevel INFO/' && \
     mkdir /var/run/sshd && mkdir /work && mkdir /archive
