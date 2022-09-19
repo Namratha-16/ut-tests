@@ -1,6 +1,5 @@
-FROM ubuntu 
-MAINTAINER demousr@gmail.com 
-
-RUN apt-get update 
-RUN apt-get install –y nginx 
-CMD [“echo”,”Image created”] 
+FROM java:8  
+COPY . /var/www/java  
+WORKDIR /var/www/java  
+RUN javac Hello.java  
+CMD ["java", "Hello"]  
