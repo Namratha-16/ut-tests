@@ -1,4 +1,4 @@
 FROM ubuntu:latest
 
-RUN apt-get update -y
+RUN dpkg --add-architecture i386 
    
