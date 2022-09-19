@@ -1,5 +1,6 @@
-FROM java:8  
-COPY . /var/www/java  
-WORKDIR /var/www/java  
-RUN javac Hello.java  
-CMD ["java", "Hello"]  
+FROM ubuntu 
+MAINTAINER logiclabs 
+
+RUN apt-get update 
+RUN apt-get install –y git 
+CMD [“echo”,”Image created”] 
