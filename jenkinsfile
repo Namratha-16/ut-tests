@@ -38,7 +38,7 @@ pipeline {
             def Result = sh(script: 'python3 /var/lib/jenkins/workspace/$JOB_NAME/tata-project/Readxml.py', returnStdout: true)
             
                 
-                if ( Result.toInteger() >= 90){
+                if ( Result.toInteger() >= 81){
                     
                     echo"build pass"
                 }
