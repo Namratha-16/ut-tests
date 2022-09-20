@@ -3,7 +3,7 @@ LABEL maintainer="Zuhir Tanous"
 ARG ssh_prv_key
 ARG ssh_pub_key
 # Install the bitbake dependencies
-RUN dpkg --add-architecture i386 
+#RUN dpkg --add-architecture i386 
 RUN apt-get dist-upgrade 
 RUN apt-get update 
 RUN apt-get -y upgrade
