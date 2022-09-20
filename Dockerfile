@@ -1,49 +1,29 @@
-FROM adoptopenjdk:openj9-bionic
+############################################################
+# Dockerfile to build yocto build environment image
+# Based on Ubuntu 20.04
+############################################################
+FROM ubuntu:20.04
 LABEL maintainer="Zuhir Tanous"
-ARG ssh_prv_key
-ARG ssh_pub_key
-# Install the bitbake dependencies
-#RUN dpkg --add-architecture i386 
-RUN apt-get dist-upgrade 
-RUN apt-get update 
-RUN apt-get -y upgrade
-#RUN apt-get install -y  gawk wget git-core diffstat unzip texinfo gcc-multilib \
-#     build-essential chrpath socat libsdl1.2-dev xterm cpio g++-multilib tmux \
- #    python3 iputils-ping locales debconf locales locales-all file time rsync \
-#   vim g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386 \
-#    python-minimal python-pip
-#RUN curl -OL https://github.com/Kitware/CMake/releases/download/v3.20.2/cmake-3.20.2.tar.gz
-#RUN tar -zxvf cmake-3.20.2.tar.gz
-#RUN cd cmake-3.20.2 &&  ./bootstrap -- -DCMAKE_USE_OPENSSL=OFF && make install
-#RUN cmake --version
-RUN apt-get update
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-RUN locale-gen && dpkg-reconfigure locales
+ENV DEBIAN_FRONTEND=noninteractive 
+RUN dpkg --add-architecture i386 \
+   && apt-get dist-upgrade \
+   && apt-get update \
+   && apt-get -y upgrade
+RUN apt-get install -y gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio \
+    python python3 python3-pip python3-pexpect python3-git python3-jinja2 pylint3 python3-subunit \
+    xz-utils debianutils iputils-ping xterm libegl1-mesa mesa-common-dev zstd
+# ENV LC_ALL en_US.UTF-8
+# ENV LANG en_US.UTF-8
+RUN apt-get install -y locales
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    locale-gen
+ENV LC_ALL en_US.UTF-8 
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en 
+RUN dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=$LANG
 
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir pyyaml
-ARG user=jenkins
-ARG group=jenkins
-ARG uid=1000
-ARG gid=1000
-ARG JENKINS_AGENT_HOME=/home/${user}
+# qmake does not show problem but we can do:
+# RUN apt-get install qtbase5-dev qttools5-dev-tools qt5-default
 
-ENV JENKINS_AGENT_HOME ${JENKINS_AGENT_HOME}
-RUN groupadd -g ${gid} ${group} \
-    && useradd -d "${JENKINS_AGENT_HOME}" -u "${uid}" -g "${gid}" -m -s /bin/bash "${user}"
-RUN mkdir "${JENKINS_AGENT_HOME}"/.ssh
-# Add the keys and set permissions
-RUN echo "$ssh_prv_key" > "${JENKINS_AGENT_HOME}"/.ssh/id_rsa && \
-    echo "$ssh_pub_key" > "${JENKINS_AGENT_HOME}"/.ssh/id_rsa.pub && \
-    chmod 600 "${JENKINS_AGENT_HOME}"/.ssh/id_rsa && \
-    chmod 600 "${JENKINS_AGENT_HOME}"/.ssh/id_rsa.pub
-RUN chown -R jenkins.jenkins "${JENKINS_AGENT_HOME}"/.ssh
-
-#RUN yes '' | ssh-keygen -q -t rsa -N '' -f /home/jenkins/.ssh/id_rsa
-#RUN touch .ssh/id_rsa.pub
-# setup SSH server
-RUN apt-get update \
-    && apt-get install --no-install-recommends -y openssh-server \
-    && rm -rf /var/lib/apt/lists/*
-#RUN sed -i /etc/ssh/sshd_config \
+WORKDIR "/work"
