@@ -3,15 +3,15 @@ LABEL maintainer="Zuhir Tanous"
 ARG ssh_prv_key
 ARG ssh_pub_key
 # Install the bitbake dependencies
-RUN dpkg --add-architecture i386 \
-    && apt-get dist-upgrade \
-    && apt-get update \
-    && apt-get -y upgrade
-RUN apt-get install -y  gawk wget git-core diffstat unzip texinfo gcc-multilib \
-     build-essential chrpath socat libsdl1.2-dev xterm cpio g++-multilib tmux \
-     python3 iputils-ping locales debconf locales locales-all file time rsync \
-     vim g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386 \
-     python-minimal python-pip
+RUN dpkg --add-architecture i386 
+RUN apt-get dist-upgrade 
+RUN apt-get update 
+RUN apt-get -y upgrade
+#RUN apt-get install -y  gawk wget git-core diffstat unzip texinfo gcc-multilib \
+#     build-essential chrpath socat libsdl1.2-dev xterm cpio g++-multilib tmux \
+ #    python3 iputils-ping locales debconf locales locales-all file time rsync \
+#   vim g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386 \
+#    python-minimal python-pip
 #RUN curl -OL https://github.com/Kitware/CMake/releases/download/v3.20.2/cmake-3.20.2.tar.gz
 #RUN tar -zxvf cmake-3.20.2.tar.gz
 #RUN cd cmake-3.20.2 &&  ./bootstrap -- -DCMAKE_USE_OPENSSL=OFF && make install
