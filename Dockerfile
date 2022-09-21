@@ -8,10 +8,10 @@ LABEL maintainer="Zuhir Tanous"
 ARG ssh_prv_key
 ARG ssh_pub_key
 # Install the bitbake dependencies
-RUN dpkg --add-architecture i386 \
-    && apt-get dist-upgrade \
-    && apt-get update \
-    && apt-get -y upgrade
+#RUN dpkg --add-architecture i386 
+#RUN apt-get dist-upgrade 
+RUN apt-get update 
+RUN apt-get -y upgrade
 RUN apt-get install -y  gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat libsdl1.2-dev xterm cpio g++-multilib tmux \
      python3 iputils-ping locales debconf locales locales-all file time rsync \
