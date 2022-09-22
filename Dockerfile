@@ -9,7 +9,7 @@ RUN dpkg --add-architecture i386 \
    && apt-get dist-upgrade \
    && apt-get update \
    && apt-get -y upgrade
-RUN apt-get install -y
+RUN apt-get install -y wget
 RUN gawk 
 RUN wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio \
     python python3 python3-pip python3-pexpect python3-git python3-jinja2 pylint3 python3-subunit \
