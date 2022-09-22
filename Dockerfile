@@ -11,7 +11,8 @@ RUN dpkg --add-architecture i386 \
    && apt-get -y upgrade
 RUN apt-get install -y wget
 RUN apt-get install -y gawk 
-RUN apt-get install -y git diffstat unzip texinfo gcc build-essential chrpath socat cpio \
+RUN apt-get install -y git
+RUN apt-get install -y diffstat unzip texinfo gcc build-essential chrpath socat cpio \
     python python3 python3-pip python3-pexpect python3-git python3-jinja2 pylint3 python3-subunit \
     xz-utils debianutils iputils-ping xterm libegl1-mesa mesa-common-dev zstd
 # ENV LC_ALL en_US.UTF-8
