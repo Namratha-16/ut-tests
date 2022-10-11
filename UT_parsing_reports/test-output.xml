@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" hostname="tmsh-wksp-xfce-7c699f95f-r5cch" name="RuniPodPlayerServiceRoboTests" skipped="0" tests="98" time="15.506">
+    <properties>
+        <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+        <property name="java.specification.version" value="9"/>
+        <property name="file.encoding.pkg" value="sun.io"/>
+        <property name="sun.cpu.isalist" value=""/>
+        <property name="sun.jnu.encoding" value="UTF-8"/>
+        <property name="java.class.path" value="out/target/common/obj/JAVA_LIBRARIES/junitxml_intermediates/classes.jar:out/target/common/obj/JAVA_LIBRARIES/iPodPlayerServiceRoboTests_intermediates/classes-pre-proguard.jar:out/target/common/obj/JAVA_LIBRARIES/robolectric_android-all-stub_intermediates/classes-pre-proguard.jar:out/target/common/obj/JAVA_LIBRARIES/Robolectric_all-target_intermediates/classes-pre-proguard.jar:out/target/common/obj/JAVA_LIBRARIES/mockito-robolectric-prebuilt_intermediates/classes-pre-proguard.jar:out/target/common/obj/JAVA_LIBRARIES/truth-prebuilt_intermediates/classes-pre-proguard.jar:out/target/common/obj/APPS/com.panasonic.media.ipodplayer_intermediates/classes-pre-proguard.jar"/>
+        <property name="java.vm.vendor" value="Oracle Corporation"/>
+        <property name="sun.arch.data.model" value="64"/>
+        <property name="java.vendor.url" value="http://java.oracle.com/"/>
+        <property name="user.timezone" value="Etc/UTC"/>
+        <property name="os.name" value="Linux"/>
+        <property name="java.vm.specification.version" value="9"/>
+        <property name="sun.java.launcher" value="SUN_STANDARD"/>
+        <property name="user.country" value="US"/>
+        <property name="sun.boot.library.path" value="/data/wksp/builds/tebuild/apps/LINUX/android/prebuilts/jdk/jdk9/linux-x86/lib"/>
+        <property name="sun.java.command" value="com.android.junitxml.JUnitXmlRunner com.panasonic.media.ipodplayer.CustomActions.DisLikeTest com.panasonic.media.ipodplayer.CustomActions.LikeTest com.panasonic.media.ipodplayer.CustomActions.RepeatTest com.panasonic.media.ipodplayer.CustomActions.ShuffleTest com.panasonic.media.ipodplayer.DataModelTest com.panasonic.media.ipodplayer.LibraryInfoTest com.panasonic.media.ipodplayer.NowPlayingUpdateTest com.panasonic.media.ipodplayer.PlayerControllerTest com.panasonic.media.ipodplayer.PlayerTest com.panasonic.media.ipodplayer.UtilsTest com.panasonic.media.ipodplayer.iPodBrowserServiceTest com.panasonic.media.ipodplayer.iPodNotificationManagerTest com.panasonic.media.ipodplayer.iapxClientSessionTest"/>
+        <property name="jdk.debug" value="release"/>
+        <property name="sun.cpu.endian" value="little"/>
+        <property name="user.home" value="/home/local/PASA/tmsh"/>
+        <property name="user.language" value="en"/>
+        <property name="java.specification.vendor" value="Oracle Corporation"/>
+        <property name="java.home" value="/data/wksp/builds/tebuild/apps/LINUX/android/prebuilts/jdk/jdk9/linux-x86"/>
+        <property name="file.separator" value="/"/>
+        <property name="java.vm.compressedOopsMode" value="Zero based"/>
+        <property name="line.separator" value="&#10;"/>
+        <property name="java.specification.name" value="Java Platform API Specification"/>
+        <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+        <property name="robolectric.offline" value="true"/>
+        <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+        <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+        <property name="java.runtime.version" value="9+181-android4685155"/>
+        <property name="user.name" value="tmsh"/>
+        <property name="path.separator" value=":"/>
+        <property name="os.version" value="5.4.0-1051-gke"/>
+        <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+        <property name="file.encoding" value="UTF-8"/>
+        <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+        <property name="robolectric.dependency.dir" value="out/target/common/obj/ROBOLECTRIC/RuniPodPlayerServiceRoboTests_intermediates/android-all"/>
+        <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+        <property name="java.io.tmpdir" value="/tmp"/>
+        <property name="robolectric.logging" value="stdout"/>
+        <property name="java.version" value="9"/>
+        <property name="user.dir" value="/data/wksp/builds/tebuild/apps/LINUX/android"/>
+        <property name="os.arch" value="amd64"/>
+        <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+        <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+        <property name="sun.os.patch.level" value="unknown"/>
+        <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+        <property name="java.vm.info" value="mixed mode"/>
+        <property name="java.vendor" value="Oracle Corporation"/>
+        <property name="java.vm.version" value="9+181-android4685155"/>
+        <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+        <property name="java.class.version" value="53.0"/>
+    </properties>
+    <testcase classname="com.panasonic.media.ipodplayer.CustomActions.DisLikeTest" name="isLikeTest" time="7.579"/>
+    <testcase classname="com.panasonic.media.ipodplayer.CustomActions.DisLikeTest" name="setDisLike" time="0.083"/>
+    <testcase classname="com.panasonic.media.ipodplayer.CustomActions.LikeTest" name="isLikeTest" time="0.045"/>
+    <testcase classname="com.panasonic.media.ipodplayer.CustomActions.LikeTest" name="setLike" time="0.048"/>
+    <testcase classname="com.panasonic.media.ipodplayer.CustomActions.RepeatTest" name="testSetRepeat" time="0.033"/>
+    <testcase classname="com.panasonic.media.ipodplayer.CustomActions.ShuffleTest" name="testSetShuffle" time="0.032"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="getQueueTest" time="1.107"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testgetPlaylistUriPath" time="0.054"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="setCurrentLibraryTypeTest" time="0.04"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testCreateBrowseListArtist2" time="0.076"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testCreateBrowseAlbumList" time="0.065"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testSetCurrentiPodDeviceId" time="0.035"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testOnDeviceUnvailability" time="0.041"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="getMediaMetadataQueue" time="0.037"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testgetSelectedCategory" time="0.054"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testOnDeviceAvailability_Media" time="0.057"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testOnDeviceAvailability_Radio" time="0.036"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testGetActiveRadioLibInBrowser" time="0.037"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testCreateBrowseListWrongPath" time="0.037"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testChangeSource" time="0.049"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testCreateBrowseListEmpty" time="0.044"/>
+    <testcase classname="com.panasonic.media.ipodplayer.DataModelTest" name="testCreateBrowseListArtist" time="0.041"/>
+    <testcase classname="com.panasonic.media.ipodplayer.LibraryInfoTest" name="testLibraryIdClone" time="0.229"/>
+    <testcase classname="com.panasonic.media.ipodplayer.LibraryInfoTest" name="testLibraryIdMedia" time="0.045"/>
+    <testcase classname="com.panasonic.media.ipodplayer.LibraryInfoTest" name="testLibraryIdRadio" time="0.03"/>
+    <testcase classname="com.panasonic.media.ipodplayer.LibraryInfoTest" name="testLibraryIdRadioUUID" time="0.03"/>
+    <testcase classname="com.panasonic.media.ipodplayer.LibraryInfoTest" name="testLibraryIdDeviceUUID" time="0.038"/>
+    <testcase classname="com.panasonic.media.ipodplayer.LibraryInfoTest" name="testLibraryIdDump" time="0.085"/>
+    <testcase classname="com.panasonic.media.ipodplayer.NowPlayingUpdateTest" name="testLibraryUuid" time="0.037"/>
+    <testcase classname="com.panasonic.media.ipodplayer.NowPlayingUpdateTest" name="testClear" time="0.043"/>
+    <testcase classname="com.panasonic.media.ipodplayer.NowPlayingUpdateTest" name="testDump" time="0.034"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="OnPlayTest" time="0.852"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="testOnPause" time="0.051"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="oniPodRemoved" time="0.031"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="OnSeekToTest" time="0.039"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onRewindTest" time="0.029"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="testOnDestroy" time="0.033"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="oniPodInsertedTest" time="0.039"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onCustomActionRepeatTest" time="0.028"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onSkipToQueueItemTest" time="0.034"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onCustomActionShuffleTest" time="0.038"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onCustomActionLikeTest" time="0.033"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="testOnPlayFromMediaId" time="0.079"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onCustomActionDislikeTest" time="0.068"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onSkipToPreviousTest" time="0.079"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onSkipToNextTest" time="0.04"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onFastForwardTest" time="0.031"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerControllerTest" name="onNowPlayingUpdateTest" time="0.032"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="startPlaybackTest" time="0.08"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="getQueueTest" time="0.025"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="onDestroyTest" time="0.048"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="retreatTest" time="0.06"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="requestAudioFocusTest" time="0.075"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="getMetadataTest" time="0.043"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="pausePlaybackTest" time="0.028"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="oniAp2SessionReadyTest" time="0.085"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="oniPodInsertedTest" time="0.035"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="advanceTest" time="0.057"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="oniPodRemovedTest" time="0.057"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="shuffleTest" time="0.034"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="IsSameMetaDataTest" time="0.04"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="dislikeTest" time="0.027"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="seekTest" time="0.032"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="requestAudioFocus2Test" time="0.041"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="likeTest" time="0.056"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="repeatTest" time="0.036"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="testNowPlayingUpdateMetadataSame" time="0.038"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="setStartPositionTest" time="0.035"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="resumePlaybackTest" time="0.035"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="oniAp2SessionClosedTest" time="0.03"/>
+    <testcase classname="com.panasonic.media.ipodplayer.PlayerTest" name="onNowPlayingUpdateTest" time="0.043"/>
+    <testcase classname="com.panasonic.media.ipodplayer.UtilsTest" name="getArtworkPasaUriTest" time="0.043"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="onGetRootTest" time="0.724"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="libraryInfoTest" time="0.045"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SetLibraryInfoAppleRadioTest" time="0.033"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="onLoadChildrenTest" time="0.35"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SendBroadcastsACTION_DEVICE_AVAILABILITY_FalseTest" time="0.072"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SendBroadcastsACTION_DEVICE_AVAILABILITYTest" time="0.058"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="testOnDestroy" time="0.031"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SetLibraryInfoAppleTest" time="0.052"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SendBroadcastsACTION_SYNC_FINISHTest" time="0.061"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SendBroadcastsACTION_SYNC_ERROR" time="0.046"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SendBroadcastsACTION_SYNC_START" time="0.049"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SendBroadcastsACTION_SYNC_UPDATE" time="0.051"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="SendBroadcastsACTION_NOW_PLAYING_UPDATE" time="0.052"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodBrowserServiceTest" name="UnregisterBroadcastReceiverTest" time="0.048"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodNotificationManagerTest" name="buildNotificationTest" time="0.246"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodNotificationManagerTest" name="buildPlayerNotificationsTypesTest" time="0.028"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodNotificationManagerTest" name="clearAllTest" time="0.027"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodNotificationManagerTest" name="buildNotificationTest2" time="0.051"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodNotificationManagerTest" name="postPauseNotificationTest" time="0.056"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iPodNotificationManagerTest" name="postPlayNotificationTest" time="0.039"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iapxClientSessionTest" name="PlayMediaLibrarySpecialTest" time="0.075"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iapxClientSessionTest" name="requestPlaybackProgressChangeOnDeviceTest" time="0.033"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iapxClientSessionTest" name="emulateHIDButtonUserActionTest" time="0.026"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iapxClientSessionTest" name="PlayMediaLibraryCollectionTest" time="0.027"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iapxClientSessionTest" name="onPlaybackControlInvokeTest" time="0.037"/>
+    <testcase classname="com.panasonic.media.ipodplayer.iapxClientSessionTest" name="StartPlaybackTest" time="0.04"/>
+</testsuite>
