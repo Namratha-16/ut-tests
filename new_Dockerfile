@@ -13,9 +13,9 @@ RUN apt-get install -y  gawk wget git-core diffstat unzip texinfo gcc-multilib \
      python3 iputils-ping locales debconf locales locales-all file time rsync \
      vim g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386 \
      python-minimal python-pip
-RUN curl -OL https://github.com/Kitware/CMake/releases/download/v3.20.2/cmake-3.20.2.tar.gz
-RUN tar -zxvf cmake-3.20.2.tar.gz
-COPY cmake-3.20.2 /opt
+RUN curl -OL https://github.com/Kitware/CMake/releases/download/v3.25.0-rc1/cmake-3.25.0-rc1-linux-x86_64.sh
+#RUN tar -zxvf cmake-3.20.2.tar.gz
+#COPY cmake-3.20.2 /opt
 #RUN cd cmake-3.20.2 &&  ./bootstrap -- -DCMAKE_USE_OPENSSL=OFF && make install
 #RUN cmake --version
 RUN apt-get update
