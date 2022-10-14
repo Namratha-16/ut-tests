@@ -29,7 +29,7 @@ RUN locale-gen && dpkg-reconfigure locales
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir pyyaml
 ARG user=jenkins
-ARG Password=jenkins
+ARG password=jenkins
 ARG group=jenkins
 ARG uid=1000
 ARG gid=1000
