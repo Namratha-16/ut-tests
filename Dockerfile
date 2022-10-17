@@ -1,4 +1,4 @@
-FROM adoptopenjdk:openj9-bionic
+FROM --platform=linux/amd64 adoptopenjdk:openj9-bionic
 LABEL maintainer="Zuhir Tanous"
 ARG ssh_prv_key
 ARG ssh_pub_key
