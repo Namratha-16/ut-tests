@@ -22,10 +22,10 @@ RUN  apt install build-essential qtcreator qt5-default qdbus-qt5
      gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl \
      gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio libtag1-dev
 RUN curl -OL https://github.com/Kitware/CMake/releases/download/v3.25.0-rc1/cmake-3.25.0-rc1-linux-x86_64.sh
-#RUN tar -zxvf cmake-3.20.2.tar.gz
-#COPY cmake-3.20.2 /opt
-#RUN cd cmake-3.20.2 &&  ./bootstrap -- -DCMAKE_USE_OPENSSL=OFF && make install
-#RUN cmake --version
+COPY cmake-3.25.0-rc1-linux-x86_64.sh /opt/
+RUN cd /opt && chmod +x /opt/cmake-3.25.0-rc1-linux-x86_64.sh && yes Y |bash cmake-3.25.0-rc1-linux-x86_64.sh
+RUN ln -s /opt/cmake-3.25.0-rc1-linux-x86_64/bin/* /usr/local/bin
+RUN cmake --version
 RUN apt-get update
 RUN apt-get install -y cmake build-essential qtcreator qt5-default qdbus-qt5
 RUN apt-get install -y qtdeclarative5-dev qtmultimedia5-dev libbluetooth-dev qtpositioning5-dev \
