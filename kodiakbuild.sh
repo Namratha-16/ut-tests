@@ -1,7 +1,7 @@
 #!/bin/bash/
 cd /var/lib/jenkins/workspace/$JOB_NAME
 cd kodiak
-. ./build_init
+source build_init
 cd conf/
 sed -i 's/#MACHINE = "samsung-initial"/MACHINE = "samsung-initial"/g' local.conf
 sed -i 's/#VENUS_PRODUCT = "orv-7in"/VENUS_PRODUCT = "orv-7in"/g' local.conf
