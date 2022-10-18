@@ -44,7 +44,7 @@ RUN echo "$ssh_prv_key" > "${JENKINS_AGENT_HOME}"/.ssh/id_rsa && \
     chmod 600 "${JENKINS_AGENT_HOME}"/.ssh/id_rsa && \
     chmod 600 "${JENKINS_AGENT_HOME}"/.ssh/id_rsa.pub
 RUN mkdir "${JENKINS_AGENT_HOME}"/certs
-COPY certs/ /home/jenkins/certs/
+COPY kodiakbuild.sh /home/jenkins/kodiakbuild.sh
 RUN chown -R jenkins.jenkins "${JENKINS_AGENT_HOME}"/.ssh
 #RUN yes '' | ssh-keygen -q -t rsa -N '' -f /home/jenkins/.ssh/id_rsa
 #RUN touch .ssh/id_rsa.pub
