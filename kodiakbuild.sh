@@ -2,6 +2,7 @@
 cd /var/lib/jenkins/workspace/$JOB_NAME
 cd kodiak
 . ./build_init
+pwd
 cd conf/
 sed -i 's/#MACHINE = "polaris-9210"/MACHINE = "polaris-9210"/g' local.conf
 sed -i 's/#VENUS_PRODUCT = "orv-7in"/VENUS_PRODUCT = "orv-7in"/g' local.conf
