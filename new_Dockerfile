@@ -13,7 +13,7 @@ RUN apt-get install -y  gawk wget git-core diffstat unzip texinfo gcc-multilib \
      python3 iputils-ping locales debconf locales locales-all file time rsync \
      vim g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386 \
      python-minimal python-pip
-RUN  apt install build-essential qtcreator qt5-default qdbus-qt5 
+RUN  apt install build-essential qtcreator qt5-default qdbus-qt5 \
      qtdeclarative5-dev qtmultimedia5-dev libbluetooth-dev qtpositioning5-dev \
      libmtp-dev libudev-dev libinput-dev libsystemd-dev libgstreamer1.0-dev \
      libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev \
@@ -27,7 +27,7 @@ RUN cd /opt && chmod +x /opt/cmake-3.25.0-rc1-linux-x86_64.sh && yes Y |bash cma
 RUN ln -s /opt/cmake-3.25.0-rc1-linux-x86_64/bin/* /usr/local/bin
 RUN cmake --version
 RUN apt-get update
-RUN apt-get install -y cmake build-essential qtcreator qt5-default qdbus-qt5
+RUN apt-get install -y cmake build-essential qtcreator qt5-default qdbus-qt5 \
 RUN apt-get install -y qtdeclarative5-dev qtmultimedia5-dev libbluetooth-dev qtpositioning5-dev \
     libmtp-dev libudev-dev libinput-dev libsystemd-dev libgstreamer1.0-dev \
     libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev \
