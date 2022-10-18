@@ -1,4 +1,5 @@
 #!/bin/bash/
+cd /var/lib/jenkins/workspace/$JOB_NAME
 cd kodiak
 . ./build_init
 cd conf/
