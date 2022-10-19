@@ -21,7 +21,7 @@ stage ('Server'){
         spec: '''{
              "files": [
                      {
-                      "pattern": "*.ATD7B9.MA2209080951jenk.swu",
+                      "pattern": "*/ATD7B9.MA2209080951jenk.swu",
                       "target" : "Polaris/"
                      }
                  ]
