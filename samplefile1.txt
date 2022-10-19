@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                echo "Hello World!"
+            }
+        }
+stage ('Server'){
+  steps {
+   rtServer (
+   id: "jfrog",
+                 url: 'http://100.20.0.129:8082//artifactory',
+                 username: 'admin',
+                  password: 'Polaris2022@',
+                  bypassProxy: true,
+                   timeout: 300
+                        )
+	rtUpload (
+        serverId:"jfrog" ,
+        spec: '''{
+             "files": [
+                     {
+                      "pattern": "/*ATD7B9.MA2209080951jenk.swu",
+                      "target" : "Polaris/"
+                     }
+                 ]
+            }''',
+
+
+
+      )
+         
+           }
+    }
+    }
+}
+ 
