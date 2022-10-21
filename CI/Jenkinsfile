@@ -37,12 +37,23 @@ pipeline {
                 build job: 'auto-merge', parameters: [
                 string(name: 'Source_Branch', value: "Development")
                 ]
+                 script {
+                    
+		    env.commiter_id = sh(script:'git log --since=6.hours --pretty=format:%an', returnStdout: true).trim()
+                  
+  
+                    echo "$commiter_id"
+                    
+                    env.commiter_mail = sh(script:  'echo $commiter_id | python3 /var/lib/jenkins/workspace/$JOB_NAME/commitmail.py', returnStdout: true)
+                    echo "$commiter_mail"
+                
+                }
             }
         }
     }
     post{
         always{
-            mail to:"ba.pillanaveen@tataelxsi.co.in",
+             mail to:"{env.commiter_mail}",
             subject: "build-Status: $JOB_NAME",
             body: "JOB-LINK to check-- http://100.20.0.129:8080/job/$JOB_NAME/$BUILD_NUMBER"
         }
