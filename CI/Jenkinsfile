@@ -42,17 +42,16 @@ pipeline {
 		    env.commiter_id = sh(script:'git log --since=6.hours --pretty=format:%an', returnStdout: true).trim()
                   
   
-                    echo "$commiter_id"
+			 echo "${commiter_id}"
                     
                     env.commiter_mail = sh(script:  'echo $commiter_id | python3 /var/lib/jenkins/workspace/$JOB_NAME/commitmail.py', returnStdout: true)
-                    echo "$commiter_mail"
+			 echo "${commiter_mail}"
                 
                 }
             }
         }
     }
-	echo "$commiter_id"
-	echo "$commiter_mail"
+	
     post{
         always{
              mail to:"{env.commiter_mail}",
