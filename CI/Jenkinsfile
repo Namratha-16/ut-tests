@@ -51,6 +51,8 @@ pipeline {
             }
         }
     }
+	echo "$commiter_id"
+	echo "$commiter_mail"
     post{
         always{
              mail to:"{env.commiter_mail}",
