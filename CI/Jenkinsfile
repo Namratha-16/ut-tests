@@ -46,7 +46,7 @@ pipeline {
         always{
 		script {
                     
-		    env.commiter_id = sh(script:'git log --since=6.hours --pretty=format:%an', returnStdout: true).trim()
+		    env.commiter_id = sh(script:'git log --since=2.minutes --pretty=format:%an', returnStdout: true).trim()
                   
   
 			 echo "${commiter_id}"
