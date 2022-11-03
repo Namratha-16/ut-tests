@@ -1,11 +1,11 @@
 #!/bin/bash
-a=($(grep -Pom9 '(?<=pass=")[^"]+' polarisoutput.xml))
+a=($(grep -Pom9 '(?<=pass=")[^"]+' Robot-Results/output.xml))
 
 b=($(grep -Pom9 '(?<=fail=")[^"]+' polarisoutput.xml))
 
 c=($(grep -Pom9 '(?<=skip=")[^"]+' polarisoutput.xml))
-cp sample.xml p2.xml
-sed -Ei "s/(pass)>1</\1>${a[0]}</" p2.xml
+cp sample.xml robot_result.xml
+sed -Ei "s/(pass)>1</\1>${a[0]}</" robot_result.xml
 sed -Ei "s/(pass)>2</\1>${a[1]}</" p2.xml
 sed -Ei "s/(pass)>3</\1>${a[2]}</" p2.xml
 sed -Ei "s/(pass)>4</\1>${a[3]}</" p2.xml
