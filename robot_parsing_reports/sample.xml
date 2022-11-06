@@ -13,14 +13,6 @@
 <skip>2</skip>
 </status>
 
-
-<status>
-<name></name>
-<pass>3</pass>
-<fail>3</fail>
-<skip>3</skip>
-</status>
-
 <status>
 <name>target-9210-indian</name>
 <pass>4</pass>
