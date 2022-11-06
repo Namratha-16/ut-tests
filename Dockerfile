@@ -43,10 +43,15 @@ RUN echo "$ssh_prv_key" > "${JENKINS_AGENT_HOME}"/.ssh/id_rsa && \
     echo "$ssh_pub_key" > "${JENKINS_AGENT_HOME}"/.ssh/id_rsa.pub && \
     chmod 600 "${JENKINS_AGENT_HOME}"/.ssh/id_rsa && \
     chmod 600 "${JENKINS_AGENT_HOME}"/.ssh/id_rsa.pub
-#RUN mkdir "${JENKINS_AGENT_HOME}"/certs
+RUN mkdir "${JENKINS_AGENT_HOME}"/work
+RUN mkdir "${JENKINS_AGENT_HOME}"/work/downloads
+RUN mkdir "${JENKINS_AGENT_HOME}"/work/sstate-cache
 COPY kodiakbuild.sh /home/jenkins/
 RUN chmod 755 /home/jenkins/kodiakbuild.sh
 RUN chown -R jenkins.jenkins "${JENKINS_AGENT_HOME}"/.ssh
+RUN chown -R jenkins.jenkins "${JENKINS_AGENT_HOME}"/work
+RUN chown -R jenkins.jenkins "${JENKINS_AGENT_HOME}"/work/downloads
+RUN chown -R jenkins.jenkins "${JENKINS_AGENT_HOME}"/work/sstate-cache
 #RUN yes '' | ssh-keygen -q -t rsa -N '' -f /home/jenkins/.ssh/id_rsa
 #RUN touch .ssh/id_rsa.pub
 # setup SSH server
