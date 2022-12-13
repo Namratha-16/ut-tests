@@ -11,7 +11,7 @@ sed -i 's/SSTATE_DIR/#SSTATE_DIR/g' local.conf
 #echo "DL_DIR=/home/jenkins/work/downloads" >local.conf
 #sed -i 's/#EXTRA_IMAGE_FEATURES/EXTRA_IMAGE_FEATURES/g' local.conf
 cd ../
-
+bitbake -c clean u-boot-fslc
 bitbake venus
 
 
