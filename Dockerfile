@@ -17,7 +17,7 @@ RUN apt-get install -y gcc-multilib
 RUN apt-get install -y build-essential chrpath socat libsdl1.2-dev xterm cpio g++-multilib tmux \
      python3 iputils-ping locales debconf locales locales-all file time rsync \
      vim g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386 \
-     python-minimal python-pip
+     python-minimal python-pip xz-utils sysstat texinfo liblz4-tool zstd
 #RUN curl -OL https://github.com/Kitware/CMake/releases/download/v3.20.2/cmake-3.20.2.tar.gz
 #RUN tar -zxvf cmake-3.20.2.tar.gz
 #RUN cd cmake-3.20.2 &&  ./bootstrap -- -DCMAKE_USE_OPENSSL=OFF && make install
