@@ -36,7 +36,7 @@ ARG gid=991
 ARG JENKINS_AGENT_HOME=/home/${user}
 ENV JENKINS_AGENT_HOME ${JENKINS_AGENT_HOME}
 RUN groupadd -g ${gid} ${group} \
-    && useradd -d "${JENKINS_AGENT_HOME}" -u "${uid}" -g "${gid}" -m -s /bin/bash "${user}"
+    && useradd -d "${JENKINS_AGENT_HOME}" -u "${uid}" -g "${gid}" -m -s /bin/sh "${user}"
 RUN mkdir "${JENKINS_AGENT_HOME}"/.ssh
 # Add the keys and set permissions
 RUN echo "$ssh_prv_key" > "${JENKINS_AGENT_HOME}"/.ssh/id_rsa && \
